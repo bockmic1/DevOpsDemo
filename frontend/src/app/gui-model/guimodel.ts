@@ -1,92 +1,10 @@
-/* tslint:disable:max-line-length */
 export class GuiModel {
 
     private _guiModel = {
         "application": {
             "title": "DevOpsDemo FS2024",
             "formList": [
-                {
-                    "id": "OwnUserForm",
-                    "title": "NotImplemented",
-                    "formFieldList": [
-                        {
-                            "type": "okButton",
-                            "name": "Ok"
-                        }
-                    ]
-                },
-                {
-                    "id": "NotImplementedForm",
-                    "title": "Not Implemented",
-                    "url": "/dummyform",
-                    "headerVisible": false,
-                    "footerVisible": false,
-                    "borderStyle": "None",
-                    "formFieldList": [
-                        {
-                            "id": "NotImplemented",
-                            "type": "label",
-                            "name": "NotImplementedMessage",
-                            "width": 2
-                        },
-                        {
-                            "type": "okButton",
-                            "name": "Ok"
-                        }
-                    ]
-                },
-                {
-                    "id": "NotImplementedFormModal",
-                    "title": "NotImplemented",
-                    "url": "/dummyform",
-                    "formFieldList": [
-                        {
-                            "id": "NotImplemented",
-                            "type": "label",
-                            "name": "NotImplementedMessage",
-                            "width": 2
-                        },
-                        {
-                            "type": "okButton",
-                            "name": "Ok"
-                        }
-                    ]
-                },
-                {
-                    "id": "ToDoForm",
-                    "title": { default: "ToDo" },
-                    "url": "/todo",
-                    "formFieldList": [
-                        {
-                            "id":   "title",
-                            "type": "text",
-                            "name": { default: "Titel" },
-                            "required": true,
-                            "width": 2
-                        },
-                        {
-                            "id": "description",
-                            "type": "text",
-                            "name": { default: "Text" },
-                            "newRow": true,
-                            "maxLength": 4000,
-                            "height": 4,
-                            "width": 2
-                        },
-                        {
-                            "type": "deleteButton",
-                            "name": "Delete"
-                        },
-                        {
-                            "type": "cancelButton",
-                            "name": "Cancel"
-                        },
-                        {
-                            "type": "okButton",
-                            "name": "Ok"
-                        }
-                    ]
-                },
+                // bestehende Formulare...
             ],
             "pageList": [
                 {
@@ -106,6 +24,24 @@ export class GuiModel {
                             "page": "toDoPage",
                             "width": 2,
                             "newRow": true,
+                        },
+                        {
+                            "type": "button",
+                            "name": { default: "20.05.2024" },
+                            "icon": "fa-briefcase",
+                            "color": "sun-flower", // Gelbe Farbe
+                            "page": "projectsPage",
+                            "width": 2,
+                            "newRow": true, // Neue Zeile kann je nach Layout benötigt werden oder nicht
+                        },
+                        {
+                            "type": "button",
+                            "name": { default: "bockmic1" },
+                            "icon": "fa-cog",
+                            "color": "amethyst", // Lila Farbe
+                            "page": "settingsPage",
+                            "width": 2,
+                            "newRow": false
                         },
                     ]
                 },
@@ -138,10 +74,10 @@ export class GuiModel {
                         }
                     ]
                 },
+                // Hier könntest du weitere Seiten hinzufügen für 'projectsPage' und 'settingsPage'
             ]
         }
     };
-
 
     get guiModel() {
         return this._guiModel;

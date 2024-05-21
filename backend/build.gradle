@@ -32,6 +32,13 @@ test {
     finalizedBy jacocoTestReport // report is always generated after tests run
 	
 }
+test {
+    reports {
+        junitXml.enabled = true
+        junitXml.destination = file("${buildDir}/test-results/test")
+    }
+}
+
 
 jacocoTestReport {
 	reports {
@@ -39,4 +46,5 @@ jacocoTestReport {
 		csv.required = false 
 		xml.destination(file("${rootProject.projectDir}/target/site/jacoco/cov.xml"))
 	}
+
 }
